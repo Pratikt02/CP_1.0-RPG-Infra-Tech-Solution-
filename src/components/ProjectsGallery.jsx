@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { GALLERY_ITEMS } from '../constants/companyData';
 import { ZoomIn, X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export const ProjectsGallery = () => {
   const [activeCategory, setActiveCategory] = useState("All");
   const [lightboxIndex, setLightboxIndex] = useState(null);
+  const revealRef = useScrollReveal();
 
   const categories = ["All", "Residential", "Commercial", "Industrial", "Infrastructure", "Interiors"];
 
@@ -32,7 +34,7 @@ export const ProjectsGallery = () => {
 
   return (
     <section id="projects" className="py-20 lg:py-28 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div ref={revealRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal-on-scroll">
 
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">

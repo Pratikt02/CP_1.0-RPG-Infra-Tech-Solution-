@@ -1,6 +1,7 @@
 import React from 'react';
 import { Building2, HardHat, LayoutTemplate, ClipboardCheck, Factory, Wrench, ArrowRight } from 'lucide-react';
 import { SERVICES } from '../constants/companyData';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const iconMap = {
   Building2: Building2,
@@ -12,6 +13,8 @@ const iconMap = {
 };
 
 export const ServicesSection = () => {
+  const revealRef = useScrollReveal();
+
   const handleServiceSelect = (e, serviceTitle) => {
     e.preventDefault();
     const serviceSelectElement = document.getElementById('service-select');
@@ -27,7 +30,7 @@ export const ServicesSection = () => {
 
   return (
     <section id="services" className="py-20 lg:py-28 bg-light-gray">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div ref={revealRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal-on-scroll">
 
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">

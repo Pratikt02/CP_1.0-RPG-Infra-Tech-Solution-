@@ -1,11 +1,14 @@
 import React from 'react';
 import { Building2, Award, Users, CheckCircle, MapPin } from 'lucide-react';
 import { COMPANY_INFO } from '../constants/companyData';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export const AboutSection = () => {
+  const revealRef = useScrollReveal();
+
   return (
     <section id="about" className="py-20 lg:py-28 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div ref={revealRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal-on-scroll">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
           {/* Left Column - Image Composition */}
