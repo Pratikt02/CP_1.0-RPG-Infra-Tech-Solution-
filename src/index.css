@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-navy: #071B3D;
+  --color-secondary-navy: #0B2855;
+  --color-construction-orange: #F39216;
+  --color-accent-gold: #FFB347;
+  --color-warm-white: #FAF9F6;
+  --color-light-gray: #F0F2F5;
+  --color-primary-text: #101828;
+  --color-secondary-text: #667085;
+
+  --font-heading: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --animate-fade-in-up: fade-in-up 0.5s ease-out;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--color-warm-white);
+    color: var(--color-primary-text);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-8 py-3 bg-construction-orange text-white font-semibold rounded-md transition-all duration-300 hover:bg-construction-orange/90 hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-construction-orange/50 shadow-md;
+  }
+
+  .btn-outline {
+    @apply px-8 py-3 border-2 border-white text-white font-semibold rounded-md transition-all duration-300 hover:bg-white hover:text-primary-navy hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-white/50;
+  }
+
+  .btn-navy {
+    @apply px-8 py-3 bg-primary-navy text-white font-semibold rounded-md transition-all duration-300 hover:bg-secondary-navy hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-primary-navy/50;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-4 tracking-tight;
+  }
+
+  .section-subtitle {
+    @apply text-construction-orange font-bold uppercase tracking-widest text-sm mb-2;
+  }
+
+  .nav-link {
+    @apply text-white/80 hover:text-white transition-colors duration-200 font-medium text-sm lg:text-base;
+  }
+
+  .nav-link-scrolled {
+    @apply text-primary-text/70 hover:text-primary-navy transition-colors duration-200 font-medium text-sm lg:text-base;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-light-gray);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary-navy);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-secondary-navy);
+}
