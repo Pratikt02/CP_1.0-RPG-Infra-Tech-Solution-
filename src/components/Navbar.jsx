@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Phone, ArrowRight, ShieldCheck } from 'lucide-react';
+import { Menu, X, Phone, ArrowRight, Moon, Sun } from 'lucide-react';
 import { COMPANY_INFO } from '../constants/companyData';
+import { useTheme } from '../hooks/useTheme';
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -80,6 +82,14 @@ export const Navbar = () => {
 
           {/* Right CTA */}
           <div className="hidden lg:flex items-center gap-4">
+            <button
+              type="button"
+              onClick={toggleTheme}
+              className="text-white p-2 rounded-md hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-construction-orange"
+              aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+            >
+              {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </button>
             <a
               href={`tel:${COMPANY_INFO.phones[0]}`}
               className="flex items-center gap-2 text-white/90 hover:text-white text-sm font-medium bg-white/10 px-3 py-2 rounded-md transition-colors"
@@ -97,14 +107,23 @@ export const Navbar = () => {
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
+          <div className="flex items-center gap-1 lg:hidden">
+            <button
+              type="button"
+              onClick={toggleTheme}
+              className="text-white p-2 rounded-md hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-construction-orange"
+              aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+            >
+              {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </button>
+            <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="lg:hidden text-white p-2 rounded-md hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-construction-orange"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+            </button>
+          </div>
         </div>
       </div>
 

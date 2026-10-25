@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-primary-navy: #071B3D;
   --color-secondary-navy: #0B2855;
@@ -22,10 +24,19 @@
     scroll-behavior: smooth;
   }
 
+  html.dark {
+    color-scheme: dark;
+  }
+
   body {
     font-family: var(--font-body);
     background-color: var(--color-warm-white);
     color: var(--color-primary-text);
+  }
+
+  html.dark body {
+    background-color: #070b14;
+    color: #f5f7fb;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -45,6 +56,11 @@
 
   .btn-navy {
     @apply px-8 py-3 bg-primary-navy text-white font-semibold rounded-md transition-all duration-300 hover:bg-secondary-navy hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-primary-navy/50;
+  }
+
+  .form-field {
+    @apply w-full px-5 py-4 bg-white text-primary-text border border-gray-200 rounded-xl focus:ring-2 focus:ring-construction-orange focus:border-transparent outline-none transition-all placeholder:text-gray-400;
+    @apply dark:bg-[#0b1220] dark:text-white dark:border-white/20 dark:placeholder:text-white/55;
   }
 
   .section-title {
@@ -113,4 +129,16 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-secondary-navy);
+}
+
+html.dark ::-webkit-scrollbar-track {
+  background: #0c1220;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: #2a3d66;
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: var(--color-construction-orange);
 }

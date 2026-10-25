@@ -11,7 +11,7 @@ const iconMap = [
 
 export const WhyChooseUsSection = () => {
   return (
-    <section id="why-us" className="py-20 lg:py-28 bg-primary-navy relative overflow-hidden">
+    <section id="why-us" className="py-20 lg:py-28 bg-primary-navy relative overflow-hidden border-y border-transparent dark:border-white/10">
       {/* Decorative architectural background element */}
       <div className="absolute top-0 right-0 w-1/3 h-full opacity-5 pointer-events-none">
         <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="w-full h-full">
@@ -31,7 +31,7 @@ export const WhyChooseUsSection = () => {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
               Why RPG Infra Tech <br /> is the Right Partner <br /> for Your Project.
             </h2>
-            <p className="text-white/70 text-base sm:text-lg mb-8 leading-relaxed">
+            <p className="text-white/80 text-base sm:text-lg mb-8 leading-relaxed">
               We understand that construction is more than just steel and concrete—it's an investment in the future. We align our processes with your business objectives to deliver value.
             </p>
 
@@ -42,7 +42,7 @@ export const WhyChooseUsSection = () => {
                 </div>
                 <div>
                   <h4 className="text-white font-bold text-lg">ISO Standards</h4>
-                  <p className="text-white/60 text-sm">Commitment to global quality benchmarks.</p>
+                  <p className="text-white/75 text-sm">Commitment to global quality benchmarks.</p>
                 </div>
               </div>
             </div>
@@ -62,7 +62,7 @@ export const WhyChooseUsSection = () => {
                       <IconComponent className="w-7 h-7" />
                     </div>
                     <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
-                    <p className="text-white/60 text-sm sm:text-base leading-relaxed">
+                    <p className="text-white/75 text-sm sm:text-base leading-relaxed">
                       {item.description}
                     </p>
                   </div>

@@ -33,16 +33,16 @@ export const ProjectsGallery = () => {
   };
 
   return (
-    <section id="projects" className="py-20 lg:py-28 bg-white">
+    <section id="projects" className="py-20 lg:py-28 bg-white dark:bg-[#0c1220]">
       <div ref={revealRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal-on-scroll">
 
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="section-subtitle">Portfolio & Gallery</div>
-          <h2 className="section-title text-primary-navy">
+          <h2 className="section-title text-primary-navy dark:text-white">
             Excellence in Structural Execution
           </h2>
-          <p className="text-secondary-text text-base sm:text-lg">
+          <p className="text-secondary-text dark:text-white/80 text-base sm:text-lg">
             Explore our architectural showcase highlighting residential, commercial, industrial, and infrastructure undertakings.
           </p>
         </div>
@@ -55,8 +55,8 @@ export const ProjectsGallery = () => {
               onClick={() => setActiveCategory(cat)}
               className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 ${
                 activeCategory === cat
-                  ? 'bg-primary-navy text-white shadow-md scale-105'
-                  : 'bg-light-gray text-secondary-text hover:bg-gray-200 hover:text-primary-navy'
+                  ? 'bg-primary-navy text-white shadow-md scale-105 dark:bg-construction-orange dark:text-white'
+                  : 'bg-light-gray text-secondary-text hover:bg-gray-200 hover:text-primary-navy dark:bg-white/10 dark:text-white/85 dark:hover:bg-white/15 dark:hover:text-white'
               }`}
             >
               {cat}
