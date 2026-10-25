@@ -51,9 +51,9 @@ export const Navbar = () => {
 
           {/* Logo */}
           <a href="#home" onClick={(e) => scrollToSection(e, '#home')} className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded bg-construction-orange flex items-center justify-center text-white shadow-md font-bold text-xl group-hover:scale-105 transition-transform">
-              RPG
-            </div>
+            <span className="bg-white rounded-md px-1.5 py-1 shadow-md ring-1 ring-black/5 group-hover:scale-105 transition-transform">
+              <img src={`${import.meta.env.BASE_URL}logo.png`} alt="RPG" className="h-9 sm:h-10 w-auto" />
+            </span>
             <div className="flex flex-col">
               <span className="text-white font-bold text-base sm:text-lg tracking-tight leading-tight">
                 RPG Infra Tech
