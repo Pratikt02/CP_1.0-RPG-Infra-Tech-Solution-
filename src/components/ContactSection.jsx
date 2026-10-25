@@ -11,9 +11,9 @@ export const ContactSection = () => {
           {/* Col 1: About Company */}
           <div className="space-y-4">
             <div className="flex items-center gap-3 mb-2">
-              <div className="w-9 h-9 rounded bg-construction-orange flex items-center justify-center font-bold text-white text-lg">
-                RPG
-              </div>
+              <span className="bg-white rounded-md px-1.5 py-1 shadow-sm">
+                <img src={`${import.meta.env.BASE_URL}logo.png`} alt="RPG" className="h-9 w-auto" />
+              </span>
               <span className="font-bold text-lg text-white">RPG Infra Tech</span>
             </div>
             <p className="text-white/70 text-sm leading-relaxed">
