@@ -11,7 +11,7 @@ import { FloatingWhatsAppButton, ScrollToTopButton } from './components/Floating
 
 export function App() {
   return (
-    <div className="min-h-screen bg-warm-white text-primary-text font-body antialiased selection:bg-construction-orange selection:text-white">
+    <div className="min-h-screen bg-warm-white text-primary-text font-body antialiased selection:bg-construction-orange selection:text-white dark:bg-[#070b14] dark:text-white">
       <Navbar />
       <main>
         <HeroSection />

@@ -29,16 +29,16 @@ export const ServicesSection = () => {
   };
 
   return (
-    <section id="services" className="py-20 lg:py-28 bg-light-gray">
+    <section id="services" className="py-20 lg:py-28 bg-light-gray dark:bg-[#10192c]">
       <div ref={revealRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal-on-scroll">
 
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="section-subtitle">Our Core Expertise</div>
-          <h2 className="section-title text-primary-navy">
+          <h2 className="section-title text-primary-navy dark:text-white">
             Comprehensive Construction & Infrastructure Solutions
           </h2>
-          <p className="text-secondary-text text-base sm:text-lg">
+          <p className="text-secondary-text dark:text-white/80 text-base sm:text-lg">
             From ground-up civil construction to specialized industrial facilities and meticulous project management, we deliver precision and reliability.
           </p>
         </div>
@@ -50,7 +50,7 @@ export const ServicesSection = () => {
             return (
               <div
                 key={service.id}
-                className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group border border-gray-100"
+                className="bg-white dark:bg-[#182338] rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group border border-gray-100 dark:border-white/10"
               >
                 {/* Image Header with Overlay */}
                 <div className="relative h-52 overflow-hidden">
@@ -68,19 +68,19 @@ export const ServicesSection = () => {
                 {/* Card Content */}
                 <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
                   <div>
-                    <h3 className="text-xl font-bold text-primary-navy mb-3 group-hover:text-construction-orange transition-colors">
+                    <h3 className="text-xl font-bold text-primary-navy dark:text-white mb-3 group-hover:text-construction-orange transition-colors">
                       {service.title}
                     </h3>
-                    <p className="text-secondary-text text-sm sm:text-base leading-relaxed mb-6">
+                    <p className="text-secondary-text dark:text-white/75 text-sm sm:text-base leading-relaxed mb-6">
                       {service.description}
                     </p>
                   </div>
 
-                  <div className="pt-4 border-t border-gray-100 flex items-center justify-between">
+                  <div className="pt-4 border-t border-gray-100 dark:border-white/10 flex items-center justify-between">
                     <a
                       href="#inquiry"
                       onClick={(e) => handleServiceSelect(e, service.title)}
-                      className="inline-flex items-center gap-2 text-primary-navy font-semibold text-sm group-hover:text-construction-orange transition-colors"
+                      className="inline-flex items-center gap-2 text-primary-navy dark:text-white font-semibold text-sm group-hover:text-construction-orange transition-colors"
                     >
                       <span>Discuss Your Project</span>
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
