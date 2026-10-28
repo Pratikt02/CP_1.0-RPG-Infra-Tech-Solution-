@@ -1,8 +1,6 @@
 import React from 'react';
 import { Building2, HardHat, LayoutTemplate, ClipboardCheck, Factory, Wrench, ArrowRight } from 'lucide-react';
 import { SERVICES } from '../constants/companyData';
-import { useScrollReveal } from '../hooks/useScrollReveal';
-
 const iconMap = {
   Building2: Building2,
   HardHat: HardHat,
@@ -13,8 +11,6 @@ const iconMap = {
 };
 
 export const ServicesSection = () => {
-  const revealRef = useScrollReveal();
-
   const handleServiceSelect = (e, serviceTitle) => {
     e.preventDefault();
     const serviceSelectElement = document.getElementById('service-select');
@@ -30,10 +26,10 @@ export const ServicesSection = () => {
 
   return (
     <section id="services" className="py-20 lg:py-28 bg-light-gray dark:bg-[#10192c]">
-      <div ref={revealRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal-on-scroll">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-16" data-reveal>
           <div className="section-subtitle">Our Core Expertise</div>
           <h2 className="section-title text-primary-navy dark:text-white">
             Comprehensive Construction & Infrastructure Solutions
@@ -44,12 +40,13 @@ export const ServicesSection = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-reveal="group">
           {SERVICES.map((service) => {
             const IconComponent = iconMap[service.icon] || Building2;
             return (
               <div
                 key={service.id}
+                data-reveal-item
                 className="bg-white dark:bg-[#182338] rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group border border-gray-100 dark:border-white/10"
               >
                 {/* Image Header with Overlay */}

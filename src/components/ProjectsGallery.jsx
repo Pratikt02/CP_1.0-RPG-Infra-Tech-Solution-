@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
 import { GALLERY_ITEMS } from '../constants/companyData';
 import { ZoomIn, X, ChevronLeft, ChevronRight } from 'lucide-react';
-import { useScrollReveal } from '../hooks/useScrollReveal';
-
 export const ProjectsGallery = () => {
   const [activeCategory, setActiveCategory] = useState("All");
   const [lightboxIndex, setLightboxIndex] = useState(null);
-  const revealRef = useScrollReveal();
 
   const categories = ["All", "Residential", "Commercial", "Industrial", "Infrastructure", "Interiors"];
 
@@ -34,10 +31,10 @@ export const ProjectsGallery = () => {
 
   return (
     <section id="projects" className="py-20 lg:py-28 bg-white dark:bg-[#0c1220]">
-      <div ref={revealRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal-on-scroll">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <div className="text-center max-w-3xl mx-auto mb-12" data-reveal>
           <div className="section-subtitle">Portfolio & Gallery</div>
           <h2 className="section-title text-primary-navy dark:text-white">
             Excellence in Structural Execution
@@ -48,7 +45,7 @@ export const ProjectsGallery = () => {
         </div>
 
         {/* Category Filters */}
-        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12">
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12" data-reveal data-reveal-delay="100">
           {categories.map((cat) => (
             <button
               key={cat}
@@ -65,11 +62,12 @@ export const ProjectsGallery = () => {
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8" data-reveal="group">
           {filteredItems.map((item, index) => (
             <div
               key={item.id}
               onClick={() => openLightbox(index)}
+              data-reveal-item
               className="group relative rounded-2xl overflow-hidden shadow-lg cursor-pointer bg-primary-navy h-72 sm:h-80"
             >
               <img

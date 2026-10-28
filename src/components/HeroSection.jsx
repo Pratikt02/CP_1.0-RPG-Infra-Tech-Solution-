@@ -27,7 +27,7 @@ export const HeroSection = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12 lg:py-20">
-        <div className="max-w-3xl">
+        <div className="max-w-3xl" data-reveal>
 
           {/* Company Badge */}
           <div className="inline-flex items-center gap-2 bg-construction-orange/20 border border-construction-orange/40 px-4 py-2 rounded-full mb-6 backdrop-blur-sm">
