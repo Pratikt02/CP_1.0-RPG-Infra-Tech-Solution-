@@ -6,10 +6,10 @@ export const ContactSection = () => {
   return (
     <section id="contact" className="py-20 bg-primary-navy text-white border-t border-transparent dark:border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-16 border-b border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-16 border-b border-white/10" data-reveal="group">
 
           {/* Col 1: About Company */}
-          <div className="space-y-4">
+          <div className="space-y-4" data-reveal-item>
             <div className="flex items-center gap-3 mb-2">
               <span className="bg-white rounded-md px-1.5 py-1 shadow-sm">
                 <img src={`${import.meta.env.BASE_URL}logo.png`} alt="RPG" className="h-9 w-auto" />
@@ -25,7 +25,7 @@ export const ContactSection = () => {
           </div>
 
           {/* Col 2: Quick Links */}
-          <div>
+          <div data-reveal-item>
             <h4 className="text-lg font-bold text-white mb-5 border-l-2 border-construction-orange pl-3">
               Quick Links
             </h4>
@@ -40,7 +40,7 @@ export const ContactSection = () => {
           </div>
 
           {/* Col 3: Services */}
-          <div>
+          <div data-reveal-item>
             <h4 className="text-lg font-bold text-white mb-5 border-l-2 border-construction-orange pl-3">
               Core Services
             </h4>
@@ -56,7 +56,7 @@ export const ContactSection = () => {
           </div>
 
           {/* Col 4: Registered Office */}
-          <div>
+          <div data-reveal-item>
             <h4 className="text-lg font-bold text-white mb-5 border-l-2 border-construction-orange pl-3">
               Headquarters
             </h4>
@@ -87,7 +87,7 @@ export const ContactSection = () => {
         </div>
 
         {/* Footer Bottom */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-white/70 gap-4">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-white/70 gap-4" data-reveal>
           <p>© {new Date().getFullYear()} {COMPANY_INFO.name}. All Rights Reserved.</p>
           <p>Designed for Quality & Engineering Performance</p>
         </div>

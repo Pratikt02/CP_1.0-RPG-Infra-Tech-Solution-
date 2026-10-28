@@ -24,7 +24,7 @@ export const WhyChooseUsSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
           {/* Left Column - Content */}
-          <div className="lg:col-span-5">
+          <div className="lg:col-span-5" data-reveal>
             <div className="inline-block px-4 py-1.5 bg-construction-orange/20 border border-construction-orange/40 rounded-full mb-4">
               <span className="text-construction-orange font-bold text-xs uppercase tracking-widest">Our Principles</span>
             </div>
@@ -50,12 +50,13 @@ export const WhyChooseUsSection = () => {
 
           {/* Right Column - Principles Cards */}
           <div className="lg:col-span-7">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6" data-reveal="group">
               {WHY_CHOOSE_US.map((item, index) => {
                 const IconComponent = iconMap[index];
                 return (
                   <div
                     key={item.title}
+                    data-reveal-item
                     className="bg-white/10 backdrop-blur-md border border-white/10 p-8 rounded-2xl hover:bg-white/15 transition-all duration-300 group"
                   >
                     <div className="w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center text-construction-orange mb-6 group-hover:scale-110 transition-transform">

@@ -1,30 +1,39 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 
-export const useScrollReveal = () => {
-  const elementRef = useRef(null);
-
+export function useScrollReveal() {
   useEffect(() => {
+    const nodes = Array.from(document.querySelectorAll('[data-reveal]'));
+    if (!nodes.length) return undefined;
+
+    const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (motionQuery.matches) {
+      nodes.forEach((node) => node.classList.add('reveal-active'));
+      return undefined;
+    }
+
+    nodes.forEach((node) => {
+      if (node.dataset.revealDelay) {
+        node.style.transitionDelay = `${node.dataset.revealDelay}ms`;
+      }
+      if (node.dataset.reveal === 'group') {
+        node.querySelectorAll('[data-reveal-item]').forEach((child, index) => {
+          child.style.transitionDelay = `${Math.min(index, 10) * 90}ms`;
+        });
+      }
+    });
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('reveal-active');
-          }
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('reveal-active');
+          observer.unobserve(entry.target);
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0, rootMargin: '0px 0px -40px 0px' }
     );
 
-    if (elementRef.current) {
-      observer.observe(elementRef.current);
-    }
-
-    return () => {
-      if (elementRef.current) {
-        observer.unobserve(elementRef.current);
-      }
-    };
+    nodes.forEach((node) => observer.observe(node));
+    return () => observer.disconnect();
   }, []);
-
-  return elementRef;
-};
+}

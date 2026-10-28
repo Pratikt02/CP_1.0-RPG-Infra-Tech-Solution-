@@ -68,7 +68,7 @@ export const InquirySection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
 
           {/* Left Column - Contact Details Sidebar */}
-          <div className="lg:col-span-5 order-2 lg:order-1">
+          <div className="lg:col-span-5 order-2 lg:order-1" data-reveal>
             <div className="section-subtitle">Connect With Us</div>
             <h2 className="text-3xl md:text-4xl font-bold text-primary-navy dark:text-white mb-8">
               Let's Build Something Great Together.
@@ -145,7 +145,7 @@ export const InquirySection = () => {
           </div>
 
           {/* Right Column - Inquiry Form */}
-          <div className="lg:col-span-7 order-1 lg:order-2">
+          <div className="lg:col-span-7 order-1 lg:order-2" data-reveal data-reveal-delay="140">
             <div className="bg-light-gray dark:bg-[#141d30] rounded-3xl p-6 sm:p-10 shadow-sm border border-gray-100 dark:border-white/10">
 
               {status === 'success' ? (

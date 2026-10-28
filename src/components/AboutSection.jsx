@@ -1,18 +1,15 @@
 import React from 'react';
 import { Building2, Award, Users, CheckCircle, MapPin } from 'lucide-react';
 import { COMPANY_INFO } from '../constants/companyData';
-import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export const AboutSection = () => {
-  const revealRef = useScrollReveal();
-
   return (
     <section id="about" className="py-20 lg:py-28 bg-white dark:bg-[#0c1220] overflow-hidden">
-      <div ref={revealRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal-on-scroll">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
           {/* Left Column - Image Composition */}
-          <div className="lg:col-span-6 relative">
+          <div className="lg:col-span-6 relative" data-reveal>
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-[#1a2438] bg-gray-100">
               <img
                 src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop"
@@ -32,7 +29,7 @@ export const AboutSection = () => {
           </div>
 
           {/* Right Column - Text & Details */}
-          <div className="lg:col-span-6">
+          <div className="lg:col-span-6" data-reveal data-reveal-delay="140">
             <div className="section-subtitle">About RPG Infra Tech</div>
             <h2 className="section-title text-primary-navy dark:text-white">
               Engineering Reliability, Building Trust Across Maharashtra.
